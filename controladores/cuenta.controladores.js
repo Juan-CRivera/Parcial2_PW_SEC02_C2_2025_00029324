@@ -1,11 +1,60 @@
 const cuentas = [
-  { id: "1", nombre: "Ana López", genero: "Femenino", balance: 1200, isActive: true },
-  { id: "2", nombre: "Carlos Mendoza", genero: "Masculino", balance: 850, isActive: true },
-  { id: "3", nombre: "Beatriz Ruiz", genero: "Femenino", balance: 2300, isActive: false },
-  { id: "4", nombre: "Diego Fernández", genero: "Masculino", balance: 3400, isActive: true },
-  { id: "5", nombre: "Elena Gómez", genero: "Femenino", balance: 950, isActive: true },
-  { id: "6", nombre: "Fernando Díaz", genero: "Masculino", balance: 1500, isActive: false },
-  { id: "7", nombre: "Gabriela Torres", genero: "Femenino", balance: 4200, isActive: true }
+  {
+    "_id": "68fafc9e9d299067c55bd4f1",
+    "isActive": true,
+    "picture": "https://picsum.photos/200/300?random=0",
+    "balance": 941,
+    "client": "Hattie Scott",
+    "gender": "female"
+  },
+  {
+    "_id": "68fafc9e49b0160223dd2516",
+    "isActive": false,
+    "picture": "https://picsum.photos/200/300?random=1",
+    "balance": 2506,
+    "client": "Lois Ortiz",
+    "gender": "female"
+  },
+  {
+    "_id": "68fafc9e5f760f195f737b0a",
+    "isActive": true,
+    "picture": "https://picsum.photos/200/300?random=2",
+    "balance": 1006,
+    "client": "Rowena Abbott",
+    "gender": "female"
+  },
+  {
+    "_id": "68fafc9ecdbf8fb76dcc8848",
+    "isActive": false,
+    "picture": "https://picsum.photos/200/300?random=3",
+    "balance": 1397,
+    "client": "Rachel Foreman",
+    "gender": "female"
+  },
+  {
+    "_id": "68fafc9ef4c8732442d87ad1",
+    "isActive": true,
+    "picture": "https://picsum.photos/200/300?random=4",
+    "balance": 2813,
+    "client": "Snow Cherry",
+    "gender": "male"
+  },
+  {
+    "_id": "68fafc9e1461f0f910f309c8",
+    "isActive": false,
+    "picture": "https://picsum.photos/200/300?random=5",
+    "balance": 501,
+    "client": "Heather Hurst",
+    "gender": "female"
+  },
+  {
+    "_id": "68fafc9e563f9c38aba784d6",
+    "isActive": false,
+    "picture": "https://picsum.photos/200/300?random=6",
+    "balance": 4133,
+    "client": "Liz Trujillo",
+    "gender": "female"
+  }
 ];
 
 const handleCuentasRequest = (req, res) => {
@@ -13,9 +62,9 @@ const handleCuentasRequest = (req, res) => {
 
   if (queryParam) {
     const resultados = cuentas.filter(c =>
-      c.id === queryParam ||
-      c.nombre.toLowerCase().includes(queryParam.toLowerCase()) ||
-      c.genero.toLowerCase() === queryParam.toLowerCase()
+      c._id === queryParam ||
+      c.client.toLowerCase().includes(queryParam.toLowerCase()) ||
+      c.gender.toLowerCase() === queryParam.toLowerCase()
     );
 
     if (resultados.length === 0) {
@@ -35,7 +84,7 @@ const handleCuentasRequest = (req, res) => {
 
 const getCuentaById = (req, res) => {
   const { id } = req.params;
-  const cuenta = cuentas.find(c => c.id === id);
+  const cuenta = cuentas.find(c => c._id === id);
   if (cuenta) {
     return res.json({ finded: true, account: cuenta });
   }
