@@ -1,0 +1,28 @@
+{
+  "name": "parcial2_pw_sec02_c2_2025_00029324",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Juan-CRivera/Parcial2_PW_SEC02_C2_2025_00029324.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Juan-CRivera/Parcial2_PW_SEC02_C2_2025_00029324/issues"
+  },
+  "homepage": "https://github.com/Juan-CRivera/Parcial2_PW_SEC02_C2_2025_00029324#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
