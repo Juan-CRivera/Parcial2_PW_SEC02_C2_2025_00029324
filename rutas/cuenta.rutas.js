@@ -6,13 +6,13 @@ const {
   getTotalBalance
 } = require('../controladores/cuenta.controladores');
 
-// GET /cuentas → listado y búsqueda
+// listas de cuentas y busqueda
 router.get('/cuentas', handleCuentasRequest);
 
-// GET /cuenta/:id → una cuenta
+//cuenta por id
 router.get('/cuenta/:id', getCuentaById);
 
-// GET /cuentasBalance → balance total
+//balance total
 router.get('/cuentasBalance', getTotalBalance);
 
 module.exports = router;
